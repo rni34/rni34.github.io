@@ -6,9 +6,19 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 17 Nov 2019 21:13:41 +1300</lastBuildDate>
     
 	<atom:link href="https://cv.kenzietandun.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://cv.kenzietandun.com/posts/my-first-post/</link>
+      <pubDate>Sun, 17 Nov 2019 21:13:41 +1300</pubDate>
+      
+      <guid>https://cv.kenzietandun.com/posts/my-first-post/</guid>
+      <description>Today was a lot of fun, I had chinese takeaway and played with good friends of mine</description>
+    </item>
     
   </channel>
 </rss>

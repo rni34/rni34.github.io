@@ -61,16 +61,15 @@ googleAnalytics = "UA-XXXXXXX-Y"
         [[params.skills.list.items]]
         details = "JS(NodeJS, VueJs)"
         [[params.skills.list.items]]
-        details = "R Language"
-        [[params.skills.list.items]]
         details = "Oracle DB/MySQL"
 
-        [[params.skills.list]]
-        title = "Professional"
-        [[params.skills.list.items]]
-        details = "Strong problem solver"
-        [[params.skills.list.items]]
-        details = "Team player"
+
+        #[[params.skills.list]]
+        #title = "Professional"
+        #[[params.skills.list.items]]
+        #details = "Strong problem solver"
+        #[[params.skills.list.items]]
+        #details = "Team player"
 
 
 
@@ -121,7 +120,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
         level = "Native"
         [[params.languages.list]]
         name = "English"
-        level = "Professional"
+        level = "Fluent"
 
 
 
@@ -134,19 +133,15 @@ googleAnalytics = "UA-XXXXXXX-Y"
         enable = true
 
         [[params.interests.list]]
-        name = "nvim vim"
+        name = "rugby"
+        [[params.interests.list]]
+        name = "gym"
+        [[params.interests.list]]
+        name = "vim"
         [[params.interests.list]]
         name = "programming competition"
         [[params.interests.list]]
-        name = "rugby"
-        [[params.interests.list]]
         name = "touch rugby"
-        [[params.interests.list]]
-        name = "boudering, climbing"
-        [[params.interests.list]]
-        name = "snow boarding, surfing"
-        [[params.interests.list]]
-        name = "kayaking"
 
 
 
@@ -180,6 +175,16 @@ googleAnalytics = "UA-XXXXXXX-Y"
 
     [params.projects]
         enable = true
+
+        [[params.projects.list]]
+        title = 'Rugby draw Website'
+        meta = "Hobby"
+        tagline = "This is concurrently ongoing project that I am working on, the current website for our local rugby matches are not that great, so I am making an website that looks much better such as you can see the draw and results for the whole season of certain club, you can search player to see who he/she plays for etc"
+
+        [[params.projects.list]]
+        title = 'Garage door opener'
+        meta = "Hobby"
+        tagline = "Our Landlord gave us only 1 garage door key and so my flat mate and I have created garage door opener webapp using jQuery and Python (Flask), I have also used OpenCV and raspberry camera module to check the status of the garage door"
 
         [[params.projects.list]]
         title = '"Footprints"Hackathon 2020 hosted by Vxt'

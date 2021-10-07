@@ -1,6 +1,6 @@
 # Page settings
 
-baseURL = "https://cv.kenzietandun.com/"
+baseURL = ""
 languageCode = "en"
 title = ""
 theme = "devresume"
@@ -188,7 +188,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
 
         [[params.projects.list]]
         title = '"Footprints"Hackathon 2020 hosted by Vxt'
-        meta = "Coursework"
+        meta = "Hackathon"
         tagline = "A medium sized project written in Java with a group of 6 people for SENG202 course in University of Canterbury. We had to implement SQL database for our persistent storage and JavaFx for our frontend. MVC design pattern was used to separate between business logic and the model and controller."
  
         [[params.projects.list]]

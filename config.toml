@@ -84,7 +84,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
         [[params.education.list]]
         degree = "BSc in Computer Science"
         university = "University of Canterbury"
-        dates = "2018 - present"
+        dates = "2018 - 2020"
 
 
 
@@ -151,7 +151,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
 
     [params.summary]
         enable = true
-        text = "A Free and Open Source Software enthusiast, clean and efficient code freak, loves working hard, enjoys rice tea and playing piano during quiet times. Has a small homelab that functions for learning purposes that also serves as a heater during winter time."
+        text = "Rugby, gym and coding. This makes 90% of my life"
 
 
 
@@ -161,9 +161,22 @@ googleAnalytics = "UA-XXXXXXX-Y"
         enable = true
 
         [[params.experience.list]]
+        company = "Wyma Solutions"
+        #details = "System Administrator"
+        dates = "2018 - 2020"
+        [[params.experience.list.items]]
+        details = "Using grafana, telegraf and influxdb to monitor the company's data from Vegetable Polishers and all sorts of machines"
+        [[params.experience.list.items]]
+        details = "Creating custom ubuntu that reads PLC data via ehternet IP and sends to cloud database"
+        [[params.experience.list.items]]
+        details = "Carrot crown cut system using opencv and cpppo"
+        [[params.experience.list.items]]
+        details = "taught students who wanted to make a quiz app, bmi calculators using tkinter"
+
+        [[params.experience.list]]
         company = "private python tutor"
         #details = "System Administrator"
-        dates = "2018 - Present"
+        dates = "2018 - 2020"
         [[params.experience.list.items]]
         details = "Teaching high school student between year 11-13 about how to implement if, while and for loops work"
         [[params.experience.list.items]]

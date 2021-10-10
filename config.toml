@@ -151,7 +151,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
 
     [params.summary]
         enable = true
-        text = "Rugby, gym and coding. This makes 90% of my life"
+        text = ""
 
 
 

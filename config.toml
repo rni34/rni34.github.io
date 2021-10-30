@@ -166,6 +166,15 @@ googleAnalytics = "UA-XXXXXXX-Y"
         enable = true
 
         [[params.experience.list]]
+        company = "Wyma solutions"
+        #details = "Data monitoring/Image processing"
+        dates = "2021 - Present"
+        [[params.experience.list.items]]
+        details = "Data monitoring machines that we sold to the customer using grafana with InfluxDB, using telegraf inside the data collector pc to send the data to the cloud"
+        [[params.experience.list.items]]
+        details = "Using Opencv to detect the shape and direction of the carrot to cut the crown off the carrots"
+
+        [[params.experience.list]]
         company = "private python tutor"
         #details = "System Administrator"
         dates = "2018 - Present"

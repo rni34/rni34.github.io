@@ -174,7 +174,6 @@ googleAnalytics = "UA-XXXXXXX-Y"
         [[params.experience.list.items]]
         details = "Using Opencv to detect the shape and direction of the carrot to cut the crown off the carrots"
 
-        [[params.experience.list]]
         company = "private python tutor"
         #details = "System Administrator"
         dates = "2018 - Present"

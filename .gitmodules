@@ -1,0 +1,3 @@
+[submodule "resume/themes/DevResume"]
+	path = resume/themes/DevResume
+	url = https://github.com/xriley/DevResume-Theme.git

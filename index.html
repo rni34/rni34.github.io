@@ -76,15 +76,14 @@
                     rounded
                     mx-auto
                   "
-                  src="assets/images/resume-profile.png"
+                  src="assets/images/resume-profile.jpg"
                   alt="image"
                 />
               </div>
 
               <div class="col text-start">
                 <p class="mb-0">
-                  Coding, playing rugby and gym makes pretty much describes my
-                  life
+                  Coding, playing rugby and gym pretty much describes my life.
                 </p>
               </div>
               <!--//col-->
@@ -122,12 +121,14 @@
                       </p>
                       <ul class="resume-list">
                         <li>
-                          Created stable Python program to read the data off PLC
-                          and save them to the cloud using telegrag plugin
+                          Created stable Python program to frequently read the data off PLC
+                          using cpppo and save them to the oracle cloud influxDB database using telegraf plugin
                         </li>
                         <li>
-                          using Pysimplegui to configure mapping of PLC tags and
-                          columns of the tables
+                            Setting up grafana in oracle cloud with InfluxDB to visualise the data Using docker container
+                        </li>
+                        <li>
+                          Using Pysimplegui to configure mapping of PLC tags to the influxDB measurement
                         </li>
                         <li>
                           opencv2 to calculate the cutting point of the carrot's
@@ -146,7 +147,7 @@
 
                 <section class="project-section py-3">
                   <h3 class="text-uppercase resume-section-heading mb-4">
-                    Projects
+                    Personal Projects
                   </h3>
                   <div class="item mb-3">
                     <div class="item-heading row align-items-center mb-2">
@@ -167,7 +168,7 @@
                     </div>
                     <div class="item-content">
                       <p>
-                        This is concurrently ongoing project that I am working
+                        This is currently ongoing project that I am working
                         on, the current website for our local rugby matches are
                         not that great, so I am making an website that looks
                         much better such as you can see the draw and results for
@@ -180,6 +181,28 @@
                     </div>
                   </div>
                   <!--//item-->
+                    <div class="item-heading row align-items-center mb-2">
+                      <h4
+                        class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+                      >
+                      Sudoku solver
+                      </h4>
+                      <div
+                        class="
+                          item-meta
+                          col-12 col-md-6 col-lg-4
+                          text-muted text-start text-md-end
+                        "
+                      >
+                        Open Source
+                      </div>
+                    </div>
+                    <div class="item-content">
+                      <p>
+                        Using recursion to solve any sudoku puzzule instantly. Good practice for backtracking as well.
+                      </p>
+                    </div>
+                  
                   <div class="item">
                     <div class="item-heading row align-items-center mb-2">
                       <h4
@@ -199,31 +222,16 @@
                     </div>
                     <div class="item-content">
                       <p>
-                        Our Landlord gave us only 1 garage door key and so my
+                        Our Landlord gave us only 1 garage door key and we have to pay extra to make more so my
                         flat mate and I have created garage door opener webapp
                         using jQuery and Python (Flask), I have also used OpenCV
-                        and raspberry camera module to check the status of the
-                        garage door
+                        and raspberry camera module to check if the garage door is open or not 
                       </p>
                     </div>
                   </div>
                   <!--//item-->
                   <div class="item">
                     <div class="item-heading row align-items-center mb-2">
-                      <h4
-                        class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
-                      >
-                        Project Praesent
-                      </h4>
-                      <div
-                        class="
-                          item-meta
-                          col-12 col-md-6 col-lg-4
-                          text-muted text-start text-md-end
-                        "
-                      >
-                        Open Source
-                      </div>
                     </div>
                     <div class="item-content">
                       <p></p>
@@ -242,10 +250,10 @@
                     Skills
                   </h3>
                   <div class="item">
-                    <h4 class="item-title">Technical</h4>
+                    <!-- <h4 class="item-title">Technical</h4> -->
                     <ul class="list-unstyled resume-skills-list">
-                      <li class="mb-2">JavaScript/Vue</li>
-                      <li class="mb-2">Python/Java/C/R</li>
+                      <li class="mb-2">JavaScript/Vue/Node</li>
+                      <li class="mb-2">Python/Java/C</li>
                       <li></li>
                       <li class="mb-2">InfluxDB/PostgreSQL/MySQL/</li>
                       <li class="mb-2">MariaDB</li>
@@ -253,16 +261,6 @@
                     </ul>
                   </div>
                   <!--//item-->
-                  <div class="item">
-                    <h4 class="item-title">Professional</h4>
-                    <ul class="list-unstyled resume-skills-list">
-                      <li class="mb-2">Effective communication</li>
-                      <li class="mb-2">Team player</li>
-                      <li></li>
-                      <li class="mb-2">Strong problem solver</li>
-                      <li>Good time management</li>
-                    </ul>
-                  </div>
                   <!--//item-->
                 </section>
                 <!--//skills-section-->
@@ -317,9 +315,8 @@
                   </h3>
                   <ul class="list-unstyled resume-interests-list mb-0">
                     <li class="mb-2">Any sports especially Rugby</li>
-                    <li class="mb-2">Gym</li>
-                    <li class="mb-2">Vim</li>
-                    <li>Travelling</li>
+                    <li class="mb-2">Power lifting/Crossfit</li>
+                    <li class="mb-2">Neovim</li>
                   </ul>
                 </section>
                 <!--//certificates-section-->
@@ -341,19 +338,19 @@
                 text-muted
               "
             >
+              <!-- <li class="list-inline-item mb-lg-0 me-3"> -->
+              <!--   <a class="resume-link" href="#" -->
+              <!--     ><i -->
+              <!--       class="fab fa-github-square fa-2x me-2" -->
+              <!--       data-fa-transform="down-4" -->
+              <!--     ></i -->
+              <!--     ><span class="d-none d-lg-inline-block text-muted" -->
+              <!--       >github.com/username</span -->
+              <!--     ></a -->
+              <!--   > -->
+              <!-- </li> -->
               <li class="list-inline-item mb-lg-0 me-3">
-                <a class="resume-link" href="#"
-                  ><i
-                    class="fab fa-github-square fa-2x me-2"
-                    data-fa-transform="down-4"
-                  ></i
-                  ><span class="d-none d-lg-inline-block text-muted"
-                    >github.com/username</span
-                  ></a
-                >
-              </li>
-              <li class="list-inline-item mb-lg-0 me-3">
-                <a class="resume-link" href="#"
+                <a class="resume-link" href="https://www.linkedin.com/in/ryo-nishikawa-99b985188/"
                   ><i
                     class="fab fa-linkedin fa-2x me-2"
                     data-fa-transform="down-4"
@@ -363,17 +360,17 @@
                   ></a
                 >
               </li>
-              <li class="list-inline-item mb-lg-0 me-lg-3">
-                <a class="resume-link" href="#"
-                  ><i
-                    class="fab fa-twitter-square fa-2x me-2"
-                    data-fa-transform="down-4"
-                  ></i
-                  ><span class="d-none d-lg-inline-block text-muted"
-                    >@twittername</span
-                  ></a
-                >
-              </li>
+              <!-- <li class="list-inline-item mb-lg-0 me-lg-3"> -->
+              <!--   <a class="resume-link" href="#" -->
+              <!--     ><i -->
+              <!--       class="fab fa-twitter-square fa-2x me-2" -->
+              <!--       data-fa-transform="down-4" -->
+              <!--     ></i -->
+              <!--     ><span class="d-none d-lg-inline-block text-muted" -->
+              <!--       >@twittername</span -->
+              <!--     ></a -->
+              <!--   > -->
+              <!-- </li> -->
             </ul>
           </div>
           <!--//resume-footer-->

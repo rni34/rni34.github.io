@@ -1,0 +1,43 @@
+name: Update Resume Files
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'index.html', 'config.toml' ]
+  workflow_dispatch:
+
+jobs:
+  update-resume:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        pip install selenium pillow
+        
+    - name: Install Chrome and ChromeDriver
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        
+    - name: Generate resume files
+      run: |
+        # Update the chromedriver path for GitHub Actions
+        sed -i 's|/opt/homebrew/bin/chromedriver|/usr/bin/google-chrome|g' convert_html_to_png.py
+        python convert_html_to_png.py
+        
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add resume.png resume.pdf
+        git diff --staged --quiet || git commit -m "Auto-update resume files [skip ci]"
+        git push

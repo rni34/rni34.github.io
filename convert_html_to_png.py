@@ -55,7 +55,7 @@ def convert_png_to_pdf(png_file, pdf_file):
 
 
 # Example usage
-html_to_png("/usr/bin/chromedriver", "index.html")
+html_to_png("/opt/homebrew/bin/chromedriver", "index.html")
 # Example usage
 convert_png_to_pdf('resume.png', 'resume.pdf')
 

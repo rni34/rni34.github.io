@@ -33,14 +33,11 @@ def html_to_png(driver_path, html_path):
 
     driver.get(html_path)
 
-    # Wait for the page to load (adjust the time as needed)
-    # time.sleep(5)  # Explicit wait
+    # Wait for the page to load
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, 'main')))
 
-    # Example: Wait for a specific element to be present
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'profile-image')))
-
-    # Locate the <article> element
-    article_element = driver.find_element(By.TAG_NAME, 'article')
+    # Locate the <main> element
+    article_element = driver.find_element(By.TAG_NAME, 'main')
 
     # Take screenshot of the <article> element
     article_element.screenshot('resume.png')

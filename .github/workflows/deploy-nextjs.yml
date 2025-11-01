@@ -34,14 +34,12 @@ jobs:
         
     - name: Copy built files to root
       run: |
-        cp react-resume/.next/server/app/index.html .
-        cp react-resume/public/passport_photo.jpeg .
-        cp -r react-resume/.next/static/* _next/static/
+        cp -r react-resume/out/* .
         
     - name: Commit and push if changed
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add index.html passport_photo.jpeg _next/
+        git add -A
         git diff --staged --quiet || git commit -m "Auto-deploy Next.js build [skip ci]"
         git push

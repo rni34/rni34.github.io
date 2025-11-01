@@ -12,10 +12,16 @@ def html_to_png(driver_path, html_path):
     # Chrome options for headless mode
     chrome_options = Options()
     chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-gpu")
+    
+    # Set the Chrome binary location if provided and it's a browser binary
+    if driver_path and os.path.exists(driver_path) and "chrome" in driver_path.lower():
+        chrome_options.binary_location = driver_path
 
-    # Set service and driver
-    service = Service(driver_path)
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    # Let Selenium manage chromedriver automatically
+    driver = webdriver.Chrome(options=chrome_options)
 
     # Set window size
     driver.set_window_size(1920, 1600)  # Adjust as per your requirement
@@ -55,8 +61,6 @@ def convert_png_to_pdf(png_file, pdf_file):
 
 
 # Example usage
-html_to_png("/opt/homebrew/bin/chromedriver", "index.html")
+html_to_png("/usr/bin/google-chrome", "index.html")
 # Example usage
 convert_png_to_pdf('resume.png', 'resume.pdf')
-
-

@@ -29,7 +29,7 @@ export default function Home() {
         {/* About */}
         <section className="mb-8">
           <p className="text-gray-700 leading-relaxed">
-            <strong>DevOps Engineer | Cloud Infrastructure Specialist</strong> with 4+ years of experience in cloud automation, Infrastructure as Code (IaC), and continuous integration/continuous deployment (CI/CD). AWS Certified professional specializing in AWS CloudFormation, AWS Cloud Development Kit (CDK), and enterprise-scale DevOps solutions. Proven track record optimizing deployment pipelines, implementing zero-downtime deployments, and building automated infrastructure across multi-cloud environments. Expert in Python, Terraform, Docker, and Kubernetes with strong focus on security, reliability, and operational excellence.
+            <strong>DevOps Engineer | Cloud Infrastructure Specialist</strong> with 4+ years of experience in cloud automation, Infrastructure as Code (IaC), and continuous integration/continuous deployment (CI/CD). AWS Subject Matter Expert (SME) in AWS CloudFormation. Proven track record optimizing deployment pipelines, implementing zero-downtime deployments. Expert in Python, Terraform, Docker with strong focus on security, reliability, and operational excellence.
           </p>
         </section>
 
@@ -49,8 +49,8 @@ export default function Home() {
               <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
                 <li>Resolve 20+ technical support cases monthly across all severity levels, with 80% specialization in AWS CloudFormation, AWS CDK, Elastic Beanstalk, Control Tower, CodeSeries, and Amazon Q Developer</li>
                 <li>Guide AWS best practices for enterprise customers, improving security posture, fault tolerance, system performance, and reducing operational costs</li>
-                <li>Develop Model Context Protocol (MCP) Servers using Python to automate our internal tools to work on cases. CloudFormation and CodePipeline troubleshooting, reducing MTTR</li>
-                <li>Collaborate with TAMs, Professional Services, and Solution Architects on high-priority escalations; participate in on-call rotation for P1 P0 incidents</li>
+                <li>Develop Model Context Protocol (MCP) Servers using Python to automate our internal tools to work on cases. CloudFormation and CodePipeline troubleshooting, reducing 45mins of the engineer time globally</li>
+                <li>Collaborate with Technical Account Managers (TAMs), Professional Services, and Solution Architects on high-priority escalations; participate in on-call rotation for P1 P0 incidents</li>
                 <li>Mentor Cloud Support Engineers on AWS DevOps services; author internal knowledge base articles and technical documentation</li>
               </ul>
             </div>
@@ -111,7 +111,7 @@ export default function Home() {
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Cloud Platforms & Services</h3>
-                <p className="text-gray-700 text-sm">AWS (CloudFormation, CDK, CodePipeline, Lambda, S3, EC2, Control Tower), Azure (DevOps, Pipelines, App Service), Oracle Cloud Infrastructure</p>
+                <p className="text-gray-700 text-sm">AWS (CloudFormation, CDK, CodePipeline, Lambda, S3, EC2, Control Tower), Azure (DevOps, Pipelines, App Service)</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">DevOps & IaC</h3>
@@ -159,6 +159,24 @@ export default function Home() {
                 <li>
                   <p className="font-semibold text-gray-900">2nd Place - HackChch</p>
                   <p className="text-gray-600">48 Hour Smart City Hackathon</p>
+                </li>
+              </ul>
+            </section>
+
+            {/* Content & Contributions */}
+            <section>
+              <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-3">Content</h2>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <a 
+                    href="https://www.youtube.com/watch?v=B2XfSe7mQKY" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-semibold text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    AWS Knowledge Center Video
+                  </a>
+                  <p className="text-gray-600">Resolving "Already Exists" Error in AWS CDK</p>
                 </li>
               </ul>
             </section>

@@ -1,0 +1,118 @@
+# Cline Rules for rni34.github.io Resume Repository
+
+## Project Overview
+This is a personal resume website built with Next.js and deployed to GitHub Pages. The site showcases professional experience, technical skills, awards, and content contributions for Ryo Nishikawa, a Cloud Support Engineer (DevOps) at AWS.
+
+## Technology Stack
+- **Framework**: Next.js (React)
+- **Styling**: Tailwind CSS
+- **Deployment**: GitHub Pages via GitHub Actions
+- **Version Control**: Git/GitHub
+
+## Code Style Guidelines
+
+### React/TypeScript
+- Use functional components with TypeScript
+- Prefer arrow functions for component definitions
+- Use semantic HTML elements
+- Keep components focused and single-purpose
+- Use Tailwind CSS utility classes for styling
+
+### File Organization
+- Main resume content: `react-resume/app/page.tsx`
+- Global styles: `react-resume/app/globals.css`
+- Public assets: `react-resume/public/`
+- Build output: Root directory (for GitHub Pages)
+
+## Development Workflow
+
+### Making Changes
+1. Edit files in the `react-resume/` directory
+2. Test locally if needed with `npm run dev` in the react-resume directory
+3. Commit changes with descriptive messages
+4. Push to master branch - GitHub Actions will automatically build and deploy
+
+### Deployment Pipeline
+- **Workflow**: `.github/workflows/deploy-nextjs.yml`
+- **Trigger**: Push to master branch
+- **Process**: Builds Next.js app and deploys static export to GitHub Pages
+- **URL**: https://rni34.github.io/
+
+## Content Guidelines
+
+### Resume Structure
+The resume follows this hierarchy:
+1. **Header**: Name, title, contact information, photo
+2. **About**: Professional summary
+3. **Work Experience**: Chronological work history with bullet points
+4. **Technical Skills**: Categorized by domain (Cloud, DevOps, Programming, Databases)
+5. **Sidebar**: Education, Awards, Content, Languages, Interests
+
+### Content Updates
+- Keep professional tone and technical accuracy
+- Use action verbs for accomplishments
+- Quantify achievements where possible
+- Maintain consistent formatting across sections
+- Ensure all links are functional and open in new tabs
+
+### AWS/DevOps Focus
+- Emphasize AWS services expertise (CloudFormation, CDK, etc.)
+- Highlight Infrastructure as Code (IaC) experience
+- Showcase automation and CI/CD achievements
+- Include relevant certifications and SME status
+
+## Git Commit Messages
+- Use conventional commit format: `type: description`
+- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `chore`
+- Examples:
+  - `feat: add new certification to awards section`
+  - `fix: correct typo in work experience`
+  - `docs: update README with deployment instructions`
+  - `chore: update dependencies`
+
+## Testing Checklist
+Before committing changes:
+- [ ] Verify all content is accurate and up-to-date
+- [ ] Check that all links work correctly
+- [ ] Ensure responsive design works on mobile
+- [ ] Confirm no TypeScript/linting errors
+- [ ] Test that images load properly
+- [ ] Verify GitHub Actions workflow passes
+
+## Common Tasks
+
+### Adding New Content
+- **New job/experience**: Add to Work Experience section with consistent formatting
+- **New skill**: Add to appropriate Technical Skills category
+- **New award**: Add to Awards section in sidebar
+- **New content/video**: Add to Content section with clickable link
+
+### Updating Information
+- **Contact details**: Update in Header section
+- **Job description**: Modify bullet points in relevant experience entry
+- **Skills**: Add/remove from Technical Skills categories
+
+## Best Practices
+- Always preview changes locally when possible
+- Keep the design clean and professional
+- Maintain consistent spacing and typography
+- Use semantic HTML for accessibility
+- Optimize images for web (compress before adding)
+- Keep the codebase DRY (Don't Repeat Yourself)
+
+## Deployment Notes
+- The site is built as a static export (`output: 'export'` in next.config.ts)
+- All paths must be relative for GitHub Pages compatibility
+- Images should be in the `public/` directory
+- The build process copies output to root directory for GitHub Pages
+
+## MCP Servers Available
+This project has access to several MCP servers that can help with development:
+- **GitHub MCP**: For checking workflows, issues, and repository management
+- **Playwright**: For testing the live website
+- **Google Search**: For research and finding resources
+
+## Emergency Contacts
+- Repository: https://github.com/rni34/rni34.github.io
+- Live Site: https://rni34.github.io/
+- GitHub Actions: Check workflow runs for deployment status

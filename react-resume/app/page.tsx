@@ -115,7 +115,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">DevOps & IaC</h3>
-                <p className="text-gray-700 text-sm">Terraform, Pulumi, AWS CloudFormation, AWS CDK, Azure DevOps, Docker, Kubernetes, Ansible</p>
+                <p className="text-gray-700 text-sm">Terraform, Pulumi, AWS CloudFormation, AWS CDK, Azure and gitlab CI/CD pipelines, Docker, Ansible</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Programming</h3>
@@ -123,7 +123,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-2">Databases & Streaming</h3>
-                <p className="text-gray-700 text-sm">PostgreSQL, MySQL, MongoDB, InfluxDB, Amazon MSK (Kafka)</p>
+                <p className="text-gray-700 text-sm">PostgreSQL, MySQL, MongoDB, InfluxDB, DuckDB, Amazon MSK (Kafka)</p>
               </div>
             </div>
           </section>

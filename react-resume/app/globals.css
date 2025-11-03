@@ -24,3 +24,53 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media print {
+  /* Hide download button when printing */
+  button {
+    display: none !important;
+  }
+  
+  /* Optimize for single page */
+  body {
+    background: white;
+  }
+  
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Reduce spacing for print */
+  .mb-8 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1rem !important;
+  }
+  
+  /* Smaller fonts for print */
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Compact lists */
+  ul {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  li {
+    margin-top: 0.1rem !important;
+    margin-bottom: 0.1rem !important;
+  }
+}

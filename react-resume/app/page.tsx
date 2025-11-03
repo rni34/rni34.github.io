@@ -19,7 +19,7 @@ export default function Home() {
             <div className="flex-1">
               <h1 className="text-5xl font-bold text-gray-900 mb-2">Ryo Nishikawa</h1>
               <p className="text-xl text-gray-600 mb-4">Cloud Support Engineer (DevOps) at AWS</p>
-              <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                 <a href="tel:0274365897" className="hover:text-blue-600">0274365897</a>
                 <span>•</span>
                 <a href="mailto:hakunishikawa@gmail.com" className="hover:text-blue-600">hakunishikawa@gmail.com</a>
@@ -27,26 +27,27 @@ export default function Home() {
                 <span>Auckland</span>
                 <span>•</span>
                 <a href="https://www.linkedin.com/in/ryo-nishikawa-99b985188/" className="hover:text-blue-600">LinkedIn</a>
-              </div>
-              <button
-                onClick={handleDownloadResume}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg border-2 border-blue-600 hover:border-blue-700"
-              >
-                <svg 
-                  className="w-5 h-5" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+                <span>•</span>
+                <button
+                  onClick={handleDownloadResume}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg border-2 border-blue-600 hover:border-blue-700"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-                  />
-                </svg>
-                Download Resume
-              </button>
+                  <svg 
+                    className="w-4 h-4" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                    />
+                  </svg>
+                  Download Resume
+                </button>
+              </div>
             </div>
           </div>
         </header>

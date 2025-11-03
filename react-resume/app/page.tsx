@@ -2,7 +2,12 @@
 
 export default function Home() {
   const handleDownloadResume = () => {
-    window.print();
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'RyoNishikawa_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

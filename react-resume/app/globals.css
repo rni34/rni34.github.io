@@ -32,45 +32,102 @@ body {
   }
   
   /* Optimize for single page */
+  * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
   body {
-    background: white;
+    background: white !important;
+    font-size: 9pt !important;
+    line-height: 1.2 !important;
   }
   
   main {
-    padding: 0 !important;
+    padding: 0.25in !important;
     margin: 0 !important;
   }
   
-  /* Reduce spacing for print */
-  .mb-8 {
-    margin-bottom: 1rem !important;
+  /* Very compact spacing */
+  .mb-8, .mb-6, .mb-4, .mb-3, .mb-2 {
+    margin-bottom: 0.15rem !important;
   }
   
-  .space-y-6 > * + * {
-    margin-top: 1rem !important;
+  .space-y-6 > * + *, .space-y-4 > * + *, .space-y-3 > * + * {
+    margin-top: 0.15rem !important;
   }
   
-  /* Smaller fonts for print */
+  .gap-6, .gap-4, .gap-8 {
+    gap: 0.25rem !important;
+  }
+  
+  .p-8 {
+    padding: 0.25in !important;
+  }
+  
+  .pb-6 {
+    padding-bottom: 0.1rem !important;
+  }
+  
+  /* Much smaller fonts for print */
   h1 {
-    font-size: 2rem !important;
+    font-size: 18pt !important;
+    margin-bottom: 0.05rem !important;
   }
   
   h2 {
-    font-size: 1.25rem !important;
+    font-size: 11pt !important;
+    margin-bottom: 0.1rem !important;
+    margin-top: 0.15rem !important;
   }
   
   h3 {
-    font-size: 1.1rem !important;
+    font-size: 10pt !important;
+    margin-bottom: 0.05rem !important;
   }
   
-  /* Compact lists */
+  p {
+    font-size: 9pt !important;
+    margin-bottom: 0.05rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Very compact lists */
   ul {
-    margin-top: 0.25rem !important;
-    margin-bottom: 0.25rem !important;
+    margin-top: 0.05rem !important;
+    margin-bottom: 0.05rem !important;
+    padding-left: 1.2em !important;
   }
   
   li {
-    margin-top: 0.1rem !important;
-    margin-bottom: 0.1rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.15 !important;
+    font-size: 8.5pt !important;
+  }
+  
+  /* Compact header */
+  header {
+    margin-bottom: 0.15rem !important;
+    padding-bottom: 0.1rem !important;
+  }
+  
+  /* Hide photo for more space */
+  img {
+    display: none !important;
+  }
+  
+  /* Compact sections */
+  section {
+    margin-bottom: 0.2rem !important;
+  }
+  
+  /* Sidebar compact */
+  aside section {
+    margin-bottom: 0.15rem !important;
+  }
+  
+  aside ul {
+    font-size: 8pt !important;
   }
 }

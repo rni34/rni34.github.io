@@ -1,26 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --success: #059669;
+  --warning: #d97706;
+  --info: #0891b2;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-variant-numeric: oldstyle-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ATS-Friendly Semantic Structure */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+
+/* Enhanced Focus States for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth Transitions */
+* {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+/* Print Optimization for ATS and PDF Generation */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+
+  /* Remove shadows and backgrounds for better printing */
+  .shadow-lg, .shadow-md, .shadow-sm, .shadow-card, .shadow-card-hover, .shadow-section {
+    box-shadow: none !important;
+  }
+
+  /* Ensure proper page breaks */
+  .experience-entry, .sidebar-card, .skills-category {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Optimize colors for print */
+  .text-primary-500, .text-primary-600 {
+    color: #1e40af !important;
+  }
+
+  .text-success-500, .text-success-600 {
+    color: #047857 !important;
+  }
+
+  .text-warning-500, .text-warning-600 {
+    color: #b45309 !important;
+  }
+
+  /* Hide interactive elements */
+  .hover\:scale-105, .hover\:shadow-card-hover, .hover\:bg-gray-50 {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+
+  /* Ensure borders are visible */
+  .border-l-4, .border-primary-500 {
+    border-color: #2563eb !important;
+    border-width: 2pt !important;
+  }
+
+  /* Optimize spacing for print */
+  .print\:mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .print\:mb-4 {
+    margin-bottom: 1rem !important;
+  }
+
+  .print\:text-sm {
+    font-size: 11pt !important;
+  }
+
+  .print\:text-base {
+    font-size: 12pt !important;
+  }
+
+  /* Hide download button and interactive elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure proper margins */
+  @page {
+    margin: 0.75in;
+    size: A4;
+  }
+
+  /* Force page breaks where needed */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  /* Ensure links are visible in print */
+  a[href]:after {
+    content: none !important;
+  }
+
+  /* Optimize photo for print */
+  .profile-photo {
+    width: 80pt !important;
+    height: 80pt !important;
+  }
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Custom Scrollbar for Modern Browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Progress Bar Animation */
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--progress-width);
+  }
+}
+
+.progress-bar {
+  animation: progress 1s ease-out forwards;
+  animation-delay: 0.5s;
+  width: 0%;
+}
+
+/* Hover Effects for Interactive Elements */
+.interactive-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.interactive-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ATS-Friendly List Styling */
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-position: inside;
+}
+
+/* Ensure proper text rendering */
+.text-rendering-optimized {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --foreground: #000000;
+    --background: #ffffff;
+    --primary: #0000ff;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

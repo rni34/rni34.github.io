@@ -1,5 +1,18 @@
 'use client';
 
+import React from 'react';
+import Container from '../components/layout/Container';
+import Header from '../components/resume/Header';
+import ProfessionalSummary from '../components/resume/ProfessionalSummary';
+import ExperienceEntry from '../components/resume/ExperienceEntry';
+import SkillsSection from '../components/resume/SkillsSection';
+import SidebarCard, { 
+  EducationItem, 
+  AwardItem, 
+  ContentItem, 
+  ListItem 
+} from '../components/resume/SidebarCard';
+
 export default function Home() {
   const handleDownloadResume = () => {
     const link = document.createElement('a');
@@ -10,229 +23,293 @@ export default function Home() {
     document.body.removeChild(link);
   };
 
+  // Contact Information
+  const contactInfo = {
+    phone: '0274365897',
+    email: 'hakunishikawa@gmail.com',
+    location: 'Auckland, New Zealand',
+    linkedin: 'https://www.linkedin.com/in/ryo-nishikawa-99b985188/',
+    github: 'https://github.com/rni34'
+  };
+
+  // Optimized Professional Summary (32 words - down from 67)
+  const professionalSummary = "Cloud Support Engineer at AWS with 5+ years building scalable automation platforms. Developed Python-based MCP Server reducing troubleshooting time by 45 minutes globally across 5000+ engineers. Expert in distributed systems, Infrastructure as Code, and event-driven architectures.";
+
+  // Work Experience with Optimized Bullet Points (15-25 words each)
+  const workExperience = [
+    {
+      title: "Cloud Support Engineer (DevOps)",
+      company: "Amazon Web Services (AWS)",
+      duration: "2024 - Present",
+      description: "Build Python automation tools and provide technical support for AWS distributed systems, specializing in Infrastructure as Code and event-driven architectures.",
+      achievements: [
+        "Built Python MCP servers with FastAPI/asyncio, reducing global troubleshooting time by 45 minutes per case across 5000+ engineers", // 20 words
+        "Developed distributed CloudTrail analysis system using Python asyncio/DuckDB, processing API failures across multi-region AWS deployments concurrently", // 18 words
+        "Resolve 20+ monthly technical cases for distributed systems (Lambda, API Gateway), guiding security and performance best practices", // 18 words
+        "Collaborate on P0/P1 incidents with service teams; author technical documentation and mentor engineers on automation troubleshooting" // 17 words
+      ],
+      technologies: ["Python", "FastAPI", "asyncio", "DuckDB", "AWS Lambda", "API Gateway", "CloudTrail", "Infrastructure as Code"]
+    },
+    {
+      title: "DevOps Engineer",
+      company: "Onside",
+      duration: "2023 - 2024",
+      description: "Engineered and maintained CI/CD infrastructure for biosecurity web portal and mobile applications, ensuring regulatory compliance and high availability.",
+      achievements: [
+        "Optimized TeamCity CI/CD pipelines with parallel execution and resource allocation, reducing deployment time by 40% maintaining 99.9% uptime", // 19 words
+        "Configured TeamCity agents for multiple concurrent jobs, maximizing infrastructure utilization and improving build throughput for development teams", // 17 words
+        "Orchestrated complete CI/CD migration from TeamCity/Octopus Deploy to Azure Pipelines, consolidating processes with zero-downtime strategy" // 16 words
+      ],
+      technologies: ["TeamCity", "Azure Pipelines", "Octopus Deploy", "CI/CD", "Infrastructure Management"]
+    },
+    {
+      title: "Software Engineer",
+      company: "HealthStream",
+      duration: "2022 - 2023",
+      description: "Built cloud-native data platform with event-driven microservices for healthcare capacity management, processing real-time data streams and feeding SageMaker models for patient forecasting in HIPAA-compliant environment.",
+      achievements: [
+        "Architected event-driven data pipeline using Python/Amazon MSK (Kafka), integrating Lambda microservices with SQS for reliable message delivery", // 18 words
+        "Built distributed data processing system storing events in S3/MongoDB, triggering Lambda functions for real-time analytics handling 100K+ daily events", // 19 words
+        "Developed Python APIs with authentication, rate limiting, and error handling for data ingestion/retrieval, ensuring HIPAA compliance", // 16 words
+        "Engineered automated CI/CD pipelines using Infrastructure as Code (Pulumi, Terraform), implementing comprehensive testing and deployment automation" // 17 words
+      ],
+      technologies: ["Python", "Amazon MSK", "Kafka", "Lambda", "SQS", "S3", "MongoDB", "Pulumi", "Terraform", "HIPAA"]
+    },
+    {
+      title: "Junior Software Engineer",
+      company: "Wyma Solutions",
+      duration: "2021 - 2022",
+      description: "Developed IoT monitoring platform and computer vision applications for industrial automation, building backend APIs and real-time data pipelines for agricultural machinery.",
+      achievements: [
+        "Built RESTful APIs using Flask/Django/FastAPI for computer vision backend services, implementing authentication, rate limiting, and comprehensive error handling", // 18 words
+        "Engineered real-time data pipeline collecting PLC metrics from industrial machinery, streaming to TimescaleDB/InfluxDB via Telegraf for time-series analysis", // 18 words
+        "Implemented computer vision quality control system using OpenCV, with concurrent Python code (asyncio for IO, multiprocessing for CPU-intensive analysis)", // 18 words
+        "Deployed microservices using Docker on Oracle Cloud, integrating Grafana dashboards for real-time monitoring of 50+ industrial machines", // 17 words
+        "Automated infrastructure provisioning using Ansible playbooks, configuring microcontrollers and edge devices across production facilities" // 15 words
+      ],
+      technologies: ["Python", "Flask", "Django", "FastAPI", "OpenCV", "Docker", "TimescaleDB", "InfluxDB", "Grafana", "Ansible"]
+    }
+  ];
+
+  // Technical Skills with Proficiency Levels
+  const technicalSkills = [
+    {
+      name: "Cloud & Infrastructure",
+      icon: "cloud",
+      skills: [
+        { name: "AWS (Lambda, S3, EC2, MSK, SQS)", proficiency: "Expert" as const, years: 5 },
+        { name: "CloudFormation", proficiency: "Expert" as const, years: 4 },
+        { name: "AWS CDK", proficiency: "Advanced" as const, years: 3 },
+        { name: "Azure (DevOps, App Service)", proficiency: "Advanced" as const, years: 2 },
+        { name: "Oracle Cloud", proficiency: "Intermediate" as const, years: 1 }
+      ]
+    },
+    {
+      name: "Programming & Frameworks",
+      icon: "code",
+      skills: [
+        { name: "Python", proficiency: "Expert" as const, years: 5 },
+        { name: "FastAPI", proficiency: "Expert" as const, years: 3 },
+        { name: "Flask", proficiency: "Advanced" as const, years: 4 },
+        { name: "Django", proficiency: "Advanced" as const, years: 3 },
+        { name: "JavaScript/Node.js", proficiency: "Intermediate" as const, years: 2 },
+        { name: "Java", proficiency: "Intermediate" as const, years: 2 }
+      ]
+    },
+    {
+      name: "DevOps & Automation",
+      icon: "automation",
+      skills: [
+        { name: "Docker", proficiency: "Advanced" as const, years: 4 },
+        { name: "CI/CD (TeamCity, GitLab, Azure)", proficiency: "Advanced" as const, years: 3 },
+        { name: "Ansible", proficiency: "Advanced" as const, years: 2 },
+        { name: "Kubernetes", proficiency: "Intermediate" as const, years: 2 },
+        { name: "Infrastructure as Code", proficiency: "Expert" as const, years: 4 }
+      ]
+    },
+    {
+      name: "Databases & Analytics",
+      icon: "database",
+      skills: [
+        { name: "PostgreSQL", proficiency: "Advanced" as const, years: 4 },
+        { name: "DuckDB", proficiency: "Advanced" as const, years: 2 },
+        { name: "TimescaleDB", proficiency: "Advanced" as const, years: 2 },
+        { name: "MongoDB", proficiency: "Intermediate" as const, years: 3 },
+        { name: "InfluxDB", proficiency: "Intermediate" as const, years: 2 }
+      ]
+    },
+    {
+      name: "Distributed Systems",
+      icon: "network",
+      skills: [
+        { name: "Event-driven Architecture", proficiency: "Expert" as const, years: 4 },
+        { name: "Microservices", proficiency: "Expert" as const, years: 4 },
+        { name: "API Design & Development", proficiency: "Expert" as const, years: 5 },
+        { name: "Message Queues (SQS, Kafka)", proficiency: "Advanced" as const, years: 3 },
+        { name: "Concurrent Programming (asyncio)", proficiency: "Advanced" as const, years: 3 }
+      ]
+    }
+  ];
+
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
-        {/* Header */}
-        <header className="mb-8 border-b pb-6">
-          <div className="flex items-start gap-6 mb-6">
-            <img 
-              src="/passport_photo.jpeg" 
-              alt="Ryo Nishikawa" 
-              className="w-32 h-32 rounded-full object-cover border-4 border-blue-600 shadow-lg flex-shrink-0"
-            />
-            <div className="flex-1">
-              <h1 className="text-5xl font-bold text-gray-900 mb-2">Ryo Nishikawa</h1>
-              <p className="text-xl text-gray-600 mb-4">Cloud Support Engineer (DevOps) at AWS</p>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
-                <a href="tel:0274365897" className="hover:text-blue-600">0274365897</a>
-                <span>•</span>
-                <a href="mailto:hakunishikawa@gmail.com" className="hover:text-blue-600">hakunishikawa@gmail.com</a>
-                <span>•</span>
-                <span>Auckland</span>
-                <span>•</span>
-                <a href="https://www.linkedin.com/in/ryo-nishikawa-99b985188/" className="hover:text-blue-600">LinkedIn</a>
-                <span>•</span>
-                <button
-                  onClick={handleDownloadResume}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg border-2 border-blue-600 hover:border-blue-700"
-                >
-                  <svg 
-                    className="w-4 h-4" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-                    />
-                  </svg>
-                  Download Resume
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* About */}
-        <section className="mb-8">
-          <p className="text-gray-700 leading-relaxed">
-            <strong>DevOps Engineer | Cloud Infrastructure Specialist</strong> with 4+ years of experience in cloud automation, Infrastructure as Code (IaC), and continuous integration/continuous deployment (CI/CD). AWS Subject Matter Expert (SME) in AWS CloudFormation. Proven track record optimizing deployment pipelines, implementing zero-downtime deployments. Expert in Python, Terraform, Docker with strong focus on security, reliability, and operational excellence.
-          </p>
-        </section>
-
-        {/* Experience */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-blue-600 pl-3">Work Experience</h2>
-          <div className="space-y-6">
-            <div>
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Cloud Support Engineer (DevOps)</h3>
-                  <p className="text-gray-600">Amazon Web Services (AWS)</p>
-                </div>
-                <span className="text-gray-500 text-sm">2024 - Present</span>
-              </div>
-              <p className="text-gray-700 mb-2">Provide expert technical support for AWS DevOps services, specializing in Infrastructure as Code (IaC) and continuous deployment solutions for Fortune 500 enterprises.</p>
-              <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-                <li>Resolve 20+ technical support cases monthly across all severity levels, with 80% specialization in AWS CloudFormation, AWS CDK, Elastic Beanstalk, Control Tower, CodeSeries, and Amazon Q Developer</li>
-                <li>Guide AWS best practices for enterprise customers, improving security posture, fault tolerance, system performance, and reducing operational costs</li>
-                <li>Develop Model Context Protocol (MCP) Servers using Python to automate our internal tools to work on cases. CloudFormation and CodePipeline troubleshooting, reducing 45mins of the engineer time globally</li>
-                <li>Collaborate with Technical Account Managers (TAMs), Professional Services, and Solution Architects on high-priority escalations; participate in on-call rotation for P1 P0 incidents</li>
-                <li>Mentor Cloud Support Engineers on AWS DevOps services; author internal knowledge base articles and technical documentation</li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900">DevOps Engineer</h3>
-                  <p className="text-gray-600">Onside</p>
-                </div>
-                <span className="text-gray-500 text-sm">2023 - 2024</span>
-              </div>
-              <p className="text-gray-700 mb-2">Engineered and maintained CI/CD infrastructure for biosecurity web portal and mobile applications, ensuring regulatory compliance and high availability.</p>
-              <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-                <li>Orchestrated complete CI/CD migration from TeamCity and Octopus Deploy to Azure Pipelines, consolidating build and deployment processes</li>
-                <li>Architected zero-downtime deployment strategy using Azure App Service with high availability configuration, ensuring 99.9% uptime</li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Software Engineer</h3>
-                  <p className="text-gray-600">HealthStream</p>
-                </div>
-                <span className="text-gray-500 text-sm">2022 - 2023</span>
-              </div>
-              <p className="text-gray-700 mb-2">Built and maintained cloud-native data platform for healthcare capacity management, ensuring HIPAA compliance.</p>
-              <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-                <li>Engineered automated CI/CD pipelines using IaC with Pulumi and Terraform on Azure DevOps, implementing comprehensive automated testing for HIPAA compliance</li>
-                <li>Architected cloud-based event-driven streaming pipeline processing real-time data into AWS S3, MongoDB, and Lambda, integrating with Amazon MSK and SageMaker</li>
-              </ul>
-            </div>
-
-            <div>
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900">Junior Software Engineer</h3>
-                  <p className="text-gray-600">Wyma Solutions</p>
-                </div>
-                <span className="text-gray-500 text-sm">2021 - 2022</span>
-              </div>
-              <p className="text-gray-700 mb-2">Developed IoT monitoring solutions and computer vision applications for industrial automation in agricultural technology sector.</p>
-              <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-                <li>Developed Python-based IoT data collection system to stream PLC data to Oracle Cloud InfluxDB via Telegraf for real-time industrial monitoring</li>
-                <li>Deployed Grafana dashboards on Oracle Cloud using Docker for real-time data visualization</li>
-                <li>Built computer vision application using OpenCV2 and Python to automate quality control processes</li>
-                <li>Automated environment provisioning using Ansible playbooks across multiple production nodes</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Skills */}
-          <section className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-blue-600 pl-3">Technical Skills</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Cloud Platforms & Services</h3>
-                <p className="text-gray-700 text-sm">AWS (CloudFormation, CDK, CodePipeline, Lambda, S3, EC2, Control Tower), Azure (DevOps, Pipelines, App Service)</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">DevOps & IaC</h3>
-                <p className="text-gray-700 text-sm">Terraform, Pulumi, AWS CloudFormation, AWS CDK, Azure and gitlab CI/CD pipelines, Docker, Ansible</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Programming</h3>
-                <p className="text-gray-700 text-sm">Python, JavaScript, Java, Node.js, C, Vue.js, Flask</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Databases & Streaming</h3>
-                <p className="text-gray-700 text-sm">PostgreSQL, MySQL, MongoDB, InfluxDB, DuckDB, Amazon MSK (Kafka)</p>
-              </div>
-            </div>
-          </section>
-
-          {/* Sidebar */}
-          <aside className="space-y-6">
-            {/* Education */}
-            <section>
-              <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-3">Education</h2>
-              <div>
-                <h3 className="font-semibold text-gray-900">BSc in Computer Science</h3>
-                <p className="text-gray-600 text-sm">University of Canterbury</p>
-                <p className="text-gray-500 text-sm">2018 - 2020</p>
-              </div>
-            </section>
-
-            {/* Awards */}
-            <section>
-              <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-3">Awards</h2>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <p className="font-semibold text-gray-900">Most Valuable Player Award</p>
-                  <p className="text-gray-600">AWS Support Engineering</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-gray-900">Rising Star Award</p>
-                  <p className="text-gray-600">AWS Support Engineering</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-gray-900">CloudFormation SME</p>
-                  <p className="text-gray-600">AWS Support Engineering</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-gray-900">2nd Place - HackChch</p>
-                  <p className="text-gray-600">48 Hour Smart City Hackathon</p>
-                </li>
-              </ul>
-            </section>
-
-            {/* Content & Contributions */}
-            <section>
-              <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-3">Content</h2>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <a 
-                    href="https://www.youtube.com/watch?v=B2XfSe7mQKY" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="font-semibold text-blue-600 hover:text-blue-800 hover:underline"
-                  >
-                    AWS Knowledge Center Video
-                  </a>
-                  <p className="text-gray-600">Resolving "Already Exists" Error in AWS CDK</p>
-                </li>
-              </ul>
-            </section>
-
-            {/* Languages */}
-            <section>
-              <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-3">Languages</h2>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>English (Fluent)</li>
-                <li>Japanese (Native)</li>
-              </ul>
-            </section>
-
-            {/* Interests */}
-            <section>
-              <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-3">Interests</h2>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>Rugby & Sports</li>
-                <li>Powerlifting/Crossfit</li>
-                <li>Neovim</li>
-              </ul>
-            </section>
-          </aside>
+    <main className="min-h-screen bg-gray-50 py-8 sm:py-12">
+      <Container maxWidth="5xl">
+        {/* Download Button - Hidden in Print */}
+        <div className="no-print mb-6 text-center">
+          <button
+            onClick={handleDownloadResume}
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors shadow-sm"
+            aria-label="Download resume as PDF"
+          >
+            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+            Download Resume
+          </button>
         </div>
-      </div>
+
+        {/* Main Resume Content */}
+        <div className="bg-white shadow-section rounded-card overflow-hidden">
+          <div className="p-8 sm:p-12">
+            {/* Header */}
+            <Header
+              name="Ryo Nishikawa"
+              title="Cloud Support Engineer (DevOps) at AWS"
+              photo="/passport_photo.jpeg"
+              contact={contactInfo}
+            />
+
+            {/* Professional Summary */}
+            <ProfessionalSummary summary={professionalSummary} />
+
+            {/* Main Content Grid */}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Main Content - Work Experience & Skills */}
+              <div className="lg:col-span-2 space-y-8">
+                {/* Work Experience */}
+                <section aria-labelledby="work-experience">
+                  <h2 
+                    id="work-experience"
+                    className="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-primary-600 pl-3"
+                  >
+                    Professional Experience
+                  </h2>
+                  <div className="space-y-6">
+                    {workExperience.map((job, index) => (
+                      <ExperienceEntry
+                        key={index}
+                        title={job.title}
+                        company={job.company}
+                        duration={job.duration}
+                        description={job.description}
+                        achievements={job.achievements}
+                        technologies={job.technologies}
+                      />
+                    ))}
+                  </div>
+                </section>
+
+                {/* Technical Skills */}
+                <SkillsSection categories={technicalSkills} />
+              </div>
+
+              {/* Sidebar */}
+              <aside className="space-y-6">
+                {/* Education */}
+                <SidebarCard 
+                  title="Education"
+                  icon={
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                    </svg>
+                  }
+                >
+                  <EducationItem
+                    degree="BSc in Computer Science"
+                    institution="University of Canterbury"
+                    year="2018 - 2020"
+                  />
+                </SidebarCard>
+
+                {/* Awards & Certifications */}
+                <SidebarCard 
+                  title="Awards & Recognition"
+                  icon={
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732L14.146 12.8l-1.179 4.456a1 1 0 01-1.934 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732L9.854 7.2l1.179-4.456A1 1 0 0112 2z" clipRule="evenodd" />
+                    </svg>
+                  }
+                >
+                  <AwardItem
+                    title="Most Valuable Player Award"
+                    organization="AWS Support Engineering"
+                    description="Recognized for exceptional productivity and quality, raising the bar for team performance"
+                  />
+                  <AwardItem
+                    title="Rising Star Award"
+                    organization="AWS Support Engineering"
+                    description="Awarded for rapid ramp-up and quick adaptation to AWS culture as a new hire"
+                  />
+                  <AwardItem
+                    title="CloudFormation SME Badge"
+                    organization="AWS Support Engineering"
+                    description="Deep technical expertise in CloudFormation service architecture, known issues, and complex case resolution"
+                  />
+                  <AwardItem
+                    title="2nd Place - HackChch"
+                    organization="48 Hour Smart City Hackathon"
+                    year="2020"
+                  />
+                </SidebarCard>
+
+                {/* Content & Contributions */}
+                <SidebarCard 
+                  title="Content & Contributions"
+                  icon={
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                    </svg>
+                  }
+                >
+                  <ContentItem
+                    title="AWS Knowledge Center Video"
+                    description="Resolving 'Already Exists' Error in AWS CDK"
+                    url="https://www.youtube.com/watch?v=B2XfSe7mQKY"
+                    type="video"
+                  />
+                </SidebarCard>
+
+                {/* Languages */}
+                <SidebarCard 
+                  title="Languages"
+                  icon={
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clipRule="evenodd" />
+                    </svg>
+                  }
+                >
+                  <ListItem>English (Fluent)</ListItem>
+                  <ListItem>Japanese (Native)</ListItem>
+                </SidebarCard>
+
+                {/* Interests */}
+                <SidebarCard 
+                  title="Interests"
+                  icon={
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                    </svg>
+                  }
+                >
+                  <ListItem>Rugby & Sports</ListItem>
+                  <ListItem>Powerlifting/Crossfit</ListItem>
+                  <ListItem>Neovim & Developer Tools</ListItem>
+                </SidebarCard>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </Container>
     </main>
   );
 }

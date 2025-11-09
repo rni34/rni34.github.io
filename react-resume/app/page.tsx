@@ -32,8 +32,8 @@ export default function Home() {
     github: 'https://github.com/rni34'
   };
 
-  // Optimized Professional Summary (32 words - down from 67)
-  const professionalSummary = "Cloud Support Engineer at AWS with 5+ years building scalable automation platforms. Developed Python-based MCP Server reducing troubleshooting time by 45 minutes globally across 5000+ engineers. Expert in distributed systems, Infrastructure as Code, and event-driven architectures.";
+  // Optimized Professional Summary
+  const professionalSummary = "Software Engineer with 5+ years building distributed systems and automation platforms using Python (5+ years), SQL, and OOP languages. Expert in API development, microservices architecture, Docker/Kubernetes, and CI/CD pipelines. Proven track record optimizing concurrent systems and infrastructure automation.";
 
   // Work Experience with Optimized Bullet Points (15-25 words each)
   const workExperience = [
@@ -43,12 +43,12 @@ export default function Home() {
       duration: "2024 - Present",
       description: "Build Python automation tools and provide technical support for AWS distributed systems, specializing in Infrastructure as Code and event-driven architectures.",
       achievements: [
-        "Built Python MCP servers with FastAPI/asyncio, reducing global troubleshooting time by 45 minutes per case across 5000+ engineers", // 20 words
-        "Developed distributed CloudTrail analysis system using Python asyncio/DuckDB, processing API failures across multi-region AWS deployments concurrently", // 18 words
+        "Built Kintsugi MCP server using Python OOP (FastAPI/asyncio), integrating with TypeScript/Java systems, reducing troubleshooting time by 45 minutes per case", // 21 words
+        "Engineered distributed CloudTrail analysis with Python asyncio/multiprocessing and DuckDB SQL queries, processing API failures across multi-region AWS deployments concurrently", // 20 words
         "Resolve 20+ monthly technical cases for distributed systems (Lambda, API Gateway), guiding security and performance best practices", // 18 words
         "Collaborate on P0/P1 incidents with service teams; author technical documentation and mentor engineers on automation troubleshooting" // 17 words
       ],
-      technologies: ["Python", "FastAPI", "asyncio", "DuckDB", "AWS Lambda", "API Gateway", "CloudTrail", "Infrastructure as Code"]
+      technologies: ["Python", "FastAPI", "asyncio", "multiprocessing", "DuckDB", "SQL", "TypeScript", "Java", "AWS Lambda", "API Gateway", "CloudTrail"]
     },
     {
       title: "DevOps Engineer",
@@ -56,11 +56,11 @@ export default function Home() {
       duration: "2023 - 2024",
       description: "Engineered and maintained CI/CD infrastructure for biosecurity web portal and mobile applications, ensuring regulatory compliance and high availability.",
       achievements: [
-        "Optimized TeamCity CI/CD pipelines with parallel execution and resource allocation, reducing deployment time by 40% maintaining 99.9% uptime", // 19 words
+        "Optimized TeamCity pipelines from sequential to parallel execution with resource allocation, reducing deployment time by 40% maintaining 99.9% uptime", // 19 words
         "Configured TeamCity agents for multiple concurrent jobs, maximizing infrastructure utilization and improving build throughput for development teams", // 17 words
-        "Orchestrated complete CI/CD migration from TeamCity/Octopus Deploy to Azure Pipelines, consolidating processes with zero-downtime strategy" // 16 words
+        "Led complete CI/CD migration from TeamCity/Octopus Deploy to GitHub Actions, consolidating processes with zero-downtime deployment strategy" // 16 words
       ],
-      technologies: ["TeamCity", "Azure Pipelines", "Octopus Deploy", "CI/CD", "Infrastructure Management"]
+      technologies: ["TeamCity", "GitHub Actions", "Octopus Deploy", "CI/CD", "Infrastructure Management"]
     },
     {
       title: "Software Engineer",
@@ -81,13 +81,13 @@ export default function Home() {
       duration: "2021 - 2022",
       description: "Developed IoT monitoring platform and computer vision applications for industrial automation, building backend APIs and real-time data pipelines for agricultural machinery.",
       achievements: [
-        "Built RESTful APIs using Flask/Django/FastAPI for computer vision backend services, implementing authentication, rate limiting, and comprehensive error handling", // 18 words
-        "Engineered real-time data pipeline collecting PLC metrics from industrial machinery, streaming to TimescaleDB/InfluxDB via Telegraf for time-series analysis", // 18 words
+        "Built RESTful APIs using Flask/Django/FastAPI connecting carrot cutter GUI to industrial machinery, implementing authentication, rate limiting, and error handling", // 19 words
+        "Engineered real-time data pipeline collecting PLC metrics from industrial machinery, streaming to TimescaleDB/InfluxDB via Telegraf for SQL-based time-series analysis", // 20 words
         "Implemented computer vision quality control system using OpenCV, with concurrent Python code (asyncio for IO, multiprocessing for CPU-intensive analysis)", // 18 words
-        "Deployed microservices using Docker on Oracle Cloud, integrating Grafana dashboards for real-time monitoring of 50+ industrial machines", // 17 words
-        "Automated infrastructure provisioning using Ansible playbooks, configuring microcontrollers and edge devices across production facilities" // 15 words
+        "Deployed microservices using Docker on Oracle Cloud, integrating Grafana dashboards with SQL queries for real-time monitoring of 50+ machines", // 19 words
+        "Automated on-site infrastructure provisioning using Ansible playbooks, configuring microcontrollers and edge devices across production facilities" // 15 words
       ],
-      technologies: ["Python", "Flask", "Django", "FastAPI", "OpenCV", "Docker", "TimescaleDB", "InfluxDB", "Grafana", "Ansible"]
+      technologies: ["Python", "Flask", "Django", "FastAPI", "SQL", "OpenCV", "asyncio", "multiprocessing", "Docker", "TimescaleDB", "InfluxDB", "Grafana", "Ansible"]
     }
   ];
 
@@ -109,10 +109,11 @@ export default function Home() {
       icon: "code",
       skills: [
         { name: "Python", proficiency: "Expert" as const, years: 5 },
+        { name: "SQL (PostgreSQL, DuckDB)", proficiency: "Expert" as const, years: 5 },
         { name: "FastAPI", proficiency: "Expert" as const, years: 3 },
         { name: "Flask", proficiency: "Advanced" as const, years: 4 },
         { name: "Django", proficiency: "Advanced" as const, years: 3 },
-        { name: "JavaScript/Node.js", proficiency: "Intermediate" as const, years: 2 },
+        { name: "TypeScript/JavaScript", proficiency: "Intermediate" as const, years: 2 },
         { name: "Java", proficiency: "Intermediate" as const, years: 2 }
       ]
     },
@@ -152,7 +153,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50 py-8 sm:py-12">
+    <main className="min-h-screen bg-white py-4">
       <Container maxWidth="5xl">
         {/* Download Button - Hidden in Print */}
         <div className="no-print mb-6 text-center">
@@ -169,13 +170,12 @@ export default function Home() {
         </div>
 
         {/* Main Resume Content */}
-        <div className="bg-white shadow-section rounded-card overflow-hidden">
-          <div className="p-8 sm:p-12">
+        <div className="bg-white">
+          <div className="p-8">
             {/* Header */}
             <Header
               name="Ryo Nishikawa"
               title="Cloud Support Engineer (DevOps) at AWS"
-              photo="/passport_photo.jpeg"
               contact={contactInfo}
             />
 
@@ -187,11 +187,8 @@ export default function Home() {
               {/* Main Content - Work Experience & Skills */}
               <div className="lg:col-span-2 space-y-8">
                 {/* Work Experience */}
-                <section aria-labelledby="work-experience">
-                  <h2 
-                    id="work-experience"
-                    className="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-primary-600 pl-3"
-                  >
+                <section>
+                  <h2 className="text-lg font-bold text-gray-900 mb-3 uppercase border-b-2 border-gray-900 pb-1">
                     Professional Experience
                   </h2>
                   <div className="space-y-6">

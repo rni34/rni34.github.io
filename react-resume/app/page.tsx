@@ -91,66 +91,7 @@ export default function Home() {
     }
   ];
 
-  // Technical Skills with Proficiency Levels
-  const technicalSkills = [
-    {
-      name: "Cloud & Infrastructure",
-      icon: "cloud",
-      skills: [
-        { name: "AWS (Lambda, S3, EC2, MSK, SQS)", proficiency: "Expert" as const, years: 5 },
-        { name: "CloudFormation", proficiency: "Expert" as const, years: 4 },
-        { name: "AWS CDK", proficiency: "Advanced" as const, years: 3 },
-        { name: "Azure (DevOps, App Service)", proficiency: "Advanced" as const, years: 2 },
-        { name: "Oracle Cloud", proficiency: "Intermediate" as const, years: 1 }
-      ]
-    },
-    {
-      name: "Programming & Frameworks",
-      icon: "code",
-      skills: [
-        { name: "Python", proficiency: "Expert" as const, years: 5 },
-        { name: "SQL (PostgreSQL, DuckDB)", proficiency: "Expert" as const, years: 5 },
-        { name: "FastAPI", proficiency: "Expert" as const, years: 3 },
-        { name: "Flask", proficiency: "Advanced" as const, years: 4 },
-        { name: "Django", proficiency: "Advanced" as const, years: 3 },
-        { name: "TypeScript/JavaScript", proficiency: "Intermediate" as const, years: 2 },
-        { name: "Java", proficiency: "Intermediate" as const, years: 2 }
-      ]
-    },
-    {
-      name: "DevOps & Automation",
-      icon: "automation",
-      skills: [
-        { name: "Docker", proficiency: "Advanced" as const, years: 4 },
-        { name: "CI/CD (TeamCity, GitLab, Azure)", proficiency: "Advanced" as const, years: 3 },
-        { name: "Ansible", proficiency: "Advanced" as const, years: 2 },
-        { name: "Kubernetes", proficiency: "Intermediate" as const, years: 2 },
-        { name: "Infrastructure as Code", proficiency: "Expert" as const, years: 4 }
-      ]
-    },
-    {
-      name: "Databases & Analytics",
-      icon: "database",
-      skills: [
-        { name: "PostgreSQL", proficiency: "Advanced" as const, years: 4 },
-        { name: "DuckDB", proficiency: "Advanced" as const, years: 2 },
-        { name: "TimescaleDB", proficiency: "Advanced" as const, years: 2 },
-        { name: "MongoDB", proficiency: "Intermediate" as const, years: 3 },
-        { name: "InfluxDB", proficiency: "Intermediate" as const, years: 2 }
-      ]
-    },
-    {
-      name: "Distributed Systems",
-      icon: "network",
-      skills: [
-        { name: "Event-driven Architecture", proficiency: "Expert" as const, years: 4 },
-        { name: "Microservices", proficiency: "Expert" as const, years: 4 },
-        { name: "API Design & Development", proficiency: "Expert" as const, years: 5 },
-        { name: "Message Queues (SQS, Kafka)", proficiency: "Advanced" as const, years: 3 },
-        { name: "Concurrent Programming (asyncio)", proficiency: "Advanced" as const, years: 3 }
-      ]
-    }
-  ];
+  // Technical Skills removed as per request
 
   return (
     <main className="min-h-screen bg-white py-4">
@@ -205,9 +146,6 @@ export default function Home() {
                     ))}
                   </div>
                 </section>
-
-                {/* Technical Skills */}
-                <SkillsSection categories={technicalSkills} />
               </div>
 
               {/* Sidebar */}

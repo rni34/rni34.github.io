@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ryo Nishikawa - Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11pt; line-height: 1.4; color: #333; max-width: 800px; margin: 0 auto; padding: 40px; }
+    h1 { font-size: 24pt; font-weight: 600; margin-bottom: 4px; }
+    .subtitle { font-size: 12pt; color: #555; margin-bottom: 8px; }
+    .contact { font-size: 10pt; color: #666; margin-bottom: 20px; }
+    .contact a { color: #0066cc; text-decoration: none; }
+    h2 { font-size: 12pt; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #333; padding-bottom: 4px; margin: 20px 0 12px 0; }
+    h3 { font-size: 11pt; font-weight: 600; margin-bottom: 2px; }
+    .job-meta { font-size: 10pt; color: #555; margin-bottom: 6px; }
+    .summary { margin-bottom: 16px; }
+    .skills-grid { display: grid; grid-template-columns: 140px 1fr; gap: 4px 12px; font-size: 10pt; }
+    .skills-grid dt { font-weight: 600; color: #444; }
+    .skills-grid dd { color: #333; }
+    .job { margin-bottom: 16px; }
+    ul { margin-left: 18px; margin-top: 4px; }
+    li { margin-bottom: 3px; }
+    .edu, .certs { margin-bottom: 8px; }
+    @media print { body { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <h1>Ryo Nishikawa</h1>
+  <div class="subtitle">Cloud Support Engineer (DevOps)</div>
+  <div class="contact">Auckland, New Zealand | <a href="https://www.linkedin.com/in/ryo-nishikawa-99b985188">LinkedIn</a></div>
+
+  <h2>Summary</h2>
+  <p class="summary">Cloud Support Engineer at AWS with expertise in IaC, CI/CD pipelines, and container orchestration. Currently working on developing AI agent and MCP servers to streamline support workflows. I have helped clients from startup companies to huge enterprise customers on optimizing deployments, providing solutions to their infrastructure, and help build their cloud solutions across AWS environments.</p>
+
+  <h2>Technical Skills</h2>
+  <p class="summary">AWS (CloudFormation, CDK, Control Tower, ECS, EKS, Fargate, Lambda, CodePipeline, CodeBuild, CodeDeploy), Terraform, Pulumi, Docker, Kubernetes, Python, TypeScript, JavaScript, MCP Server Development, Amazon Q Developer, Azure DevOps, Datadog, Grafana, PostgreSQL, MongoDB</p>
+
+  <h2>Experience</h2>
+  
+  <div class="job">
+    <h3>Cloud Support Engineer (DevOps) – Amazon Web Services (AWS)</h3>
+    <div class="job-meta">Auckland, New Zealand (Remote) | April 2024 – Present</div>
+    <ul>
+      <li>Support enterprise customers across IaC (CloudFormation, CDK, Control Tower), CI/CD (CodePipeline, CodeBuild, CodeDeploy), and Containers (ECS, EKS, Fargate) service families</li>
+      <li>Respond to P0/P1 incidents requiring rapid diagnosis and resolution</li>
+      <li>Delivered workshops on Amazon Q Developer, Kiro CLI, and MCP server development to accelerate developer workflows</li>
+      <li>Built internal MCP server (Python, TypeScript) for automated case retrieval and diagnostic tooling, adopted by 200+ engineers for live troubleshooting</li>
+      <li>Rising Star Award (2024), MVP Award (2025), CloudFormation Subject Matter Expert (2025)</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <h3>DevOps Engineer – Onside</h3>
+    <div class="job-meta">Christchurch, New Zealand | May 2023 – April 2024</div>
+    <ul>
+      <li>Migrated CI/CD from TeamCity + Octopus Deploy to Azure DevOps, eliminating dual licensing costs and achieving 5x faster builds through parallelization</li>
+      <li>Built full-stack IaC (Terraform) for AWS infrastructure: CloudFlare, ALB, ASG, RDS, enabling reproducible test environments</li>
+      <li>Implemented blue/green deployments for marketing site using Azure App Service with automated traffic shifting</li>
+      <li>Configured mobile app CI/CD for automated iOS/Android builds and deployments to test environments</li>
+      <li>Set up observability stack: Datadog (P95/P99 monitoring), GuardDuty alerts for security incidents</li>
+      <li>Secured $100K AWS Activate funding by pitching cloud acceleration strategy to AWS Solutions Architects</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <h3>Software Engineer – HealthStream</h3>
+    <div class="job-meta">Remote | April 2022 – May 2023</div>
+    <ul>
+      <li>Built multi-environment IaC (Terraform, Pulumi) with Azure DevOps CI/CD for HIPAA-compliant deployments across dev/test/prod</li>
+      <li>Designed end-to-end streaming pipeline: VPN from on-premise, MSK (Kafka), Lambda, S3/MongoDB, processing HL7 to JSON transformations</li>
+      <li>Developed Python Lambda functions for real-time data transformation, converting HL7 messages to JSON and persisting to S3 and MongoDB</li>
+      <li>Automated ML workflow: MongoDB data updates triggering SageMaker hyperparameter tuning for Random Forest model predicting patient traffic and ward allocation</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <h3>Software Engineer – Wyma Solutions</h3>
+    <div class="job-meta">Christchurch, New Zealand | February 2021 – April 2022</div>
+    <ul>
+      <li>Built real-time PLC monitoring system (Python, InfluxDB, Grafana, Docker) enabling remote machine health alerts via SMS/email for warranty compliance</li>
+      <li>Developed computer vision system (OpenCV, Python) for automated carrot processing at 1m/s line speed, reducing manual labor</li>
+      <li>Created Vue.js configuration interface for on-site camera calibration across varying lighting conditions</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="edu"><strong>Bachelor of Science, Computer Science</strong> – University of Canterbury (2018 – 2020)</div>
+
+  <h2>Certifications</h2>
+  <div class="certs">AWS Most Valuable Player Award (2025) • CloudFormation Subject Matter Expert (2025)</div>
+</body>
+</html>

@@ -27,7 +27,7 @@ AWS (including ECS, EKS, Lambda, CloudFormation, CDK), Azure DevOps, Terraform, 
 - Support enterprise customers across IaC (CloudFormation, CDK, Control Tower), CI/CD (CodePipeline, CodeBuild, CodeDeploy), and Containers (ECS, EKS, Fargate) service families
 - On-call for P0/P1 incidents requiring rapid diagnosis and resolution
 - Delivered workshops on Amazon Q Developer, Kiro CLI, and MCP server development to accelerate customer development workflows
-- Built internal MCP server for automated case retrieval and diagnostic tooling, supporting 200+ active engineers in live troubleshooting
+- Built internal MCP server for automated case retrieval and diagnostic tooling, used by 500+ users (4.4M tool calls since September 2025) for live troubleshooting
 - Rising Star Award (2024), MVP Award (2025), CloudFormation Subject Matter Expert certification
 
 ### DevOps Engineer
